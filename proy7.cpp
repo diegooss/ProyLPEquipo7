@@ -2,11 +2,13 @@
 #include<conio.h>
 #include<iostream.h>
 #include<dos.h>
+#include<nuearch.h>
 
 struct CalendarioGrupo7
 {
 	int op;
-	char ne [100], de [100], fe [100], ho[100];
+	char ne[100], de[100];
+   struct date fe, ho;
 };
 
 /*struct date
@@ -19,36 +21,49 @@ struct CalendarioGrupo7
 
 main ()
 {
+ CreacionArchivo ();
+
+
 	int op;
 	struct date fecha;
-	getdate(&fecha);
+	//getdate(&fecha);
+   fecha.da_year=2013;
    cout<<fecha.da_year<<" "<<fecha.da_mon<<" "<<fecha.da_day<<endl;
    CalendarioGrupo7 nuevoevento;
-   cout<<"Ingrese  el nombre corto del evento:\n ";
-   gets(nuevoevento.ne);
+
+   /*cout<<"Ingrese  el nombre corto del evento:\n ";
+   /*gets(nuevoevento.ne);
    cout<<"Ingrese la descripcion del evento: \n";
-   gets(nuevoevento.de);
+   /*gets(nuevoevento.de);
    cout<<"Ingrese la fecha (dd/mm/aa) \n";
    gets(nuevoevento.fe);
    cout<<"Ingrese la hora (hh/mm) \n";
-   gets(nuevoevento.ho);
+   gets(nuevoevento.ho);*/
 
+do
+{
 cout<< "1.-Ingresar nuevo evento. \n";
 cout<< "2.-Ver mis eventos para hoy. \n";
 cout<< "3.-Ingresar nuevo evento. \n";
+cout<< "4.-Salir. \n";
+
 cin>>op;
 
 switch (op)
 	{
 		case 1:
+      //abrir el archivo
    	   cout<<"Nombre corto del evento \n";
        	cin>>nuevoevento.ne;
+
        	cout<<"Descripcion del evento \n";
        	cin>>nuevoevento.de;
        	cout<<"Feha / Hora de Inicio \n";
-       	cin>>nuevoevento.fe;
+       	//cin>>nuevoevento.fe;
+         Escribireentoarchivo(nuevoevento)
 	}
-
+}
+while (op =! 4);
 getch ();
 }
 
