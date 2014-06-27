@@ -2,14 +2,16 @@
 #include<conio.h>
 #include<iostream.h>
 #include<dos.h>
+#include<esevar.h>
+//#include<struceve.h>
+#include<visarch.h>
 #include<nuearch.h>
 
-struct CalendarioGrupo7
-{
-	int op;
-	char ne[100], de[100];
-   struct date fe, ho;
-};
+
+
+
+
+
 
 /*struct date
 {
@@ -25,11 +27,12 @@ main ()
 
 
 	int op;
+   struct CalendarioGrupo7 nuevoevento;
 	struct date fecha;
 	//getdate(&fecha);
    fecha.da_year=2013;
    cout<<fecha.da_year<<" "<<fecha.da_mon<<" "<<fecha.da_day<<endl;
-   CalendarioGrupo7 nuevoevento;
+   //CalendarioGrupo7 nuevoevento;
 
    /*cout<<"Ingrese  el nombre corto del evento:\n ";
    /*gets(nuevoevento.ne);
@@ -55,12 +58,12 @@ switch (op)
       //abrir el archivo
    	   cout<<"Nombre corto del evento \n";
        	cin>>nuevoevento.ne;
-
-       	cout<<"Descripcion del evento \n";
+			cout<<"Descripcion del evento \n";
        	cin>>nuevoevento.de;
        	cout<<"Feha / Hora de Inicio \n";
        	//cin>>nuevoevento.fe;
-         Escribireentoarchivo(nuevoevento)
+
+         EscribirEventoArchivo(nuevoevento);
 	}
 }
 while (op =! 4);
