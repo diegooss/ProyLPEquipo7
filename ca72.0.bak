@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<conio.h>
+#include<iostream.h>
+#include<dos.h>
+#include<nuearch.h>
+#include<struceve.h>
+
+
+main ()
+{
+   cout<< "----------Calendario Grupo 7----------\n";
+   cout<< "\n";
+
+	CreacionArchivo ();
+
+
+   int op;
+
+   do
+	{
+		cout<< "1.-Ingresar nuevo evento. \n";
+		cout<< "2.-Ver mis eventos para hoy. \n";
+		cout<< "3.-Ver mis eventos para toda la semana. \n";
+		cout<< "4.-Salir. \n";
+		cin>>op;
+
+	switch (op)
+	{
+		case 1:
+
+         CalendarioGrupo7 NuevoEvento;
+   	   cout<<"Nombre corto del evento \n";
+       	gets(NuevoEvento.ne);
+			cout<<"Descripcion del evento \n";
+       	gets(NuevoEvento.de);
+
+	}
+}
+while (op =! 4);
+
+
+getch ();
+}
+
